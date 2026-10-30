@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dynamic Carpet &amp; Upholstery Care | Medicine Hat</title>
 <meta name="description" content="Serving Medicine Hat for over 45 years. Dynamic Carpet &amp; Upholstery Care is your #1 choice for all your carpet &amp; upholstery cleaning needs.">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,9 +39,7 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:46px;height:46px;flex:none}
-.brand b{font-family:var(--serif);font-weight:900;font-size:20px;line-height:1.05;display:block;letter-spacing:-.01em}
-.brand small{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--clay)}
+.brand img{height:56px;width:auto}
 nav ul{display:flex;gap:26px;list-style:none;align-items:center}
 nav a{text-decoration:none;font-weight:500;font-size:15px;position:relative}
 nav ul a:not(.btn):after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--clay);transition:width .25s}
@@ -105,7 +104,7 @@ h2{font-family:var(--serif);font-weight:900;font-size:clamp(34px,4.6vw,58px);lin
 
 /* water */
 .water{position:relative;background:var(--ink);color:var(--cream);overflow:hidden;padding:100px 0}
-.water:before{content:"";position:absolute;right:0;top:0;bottom:0;width:48%;background:url(images/empty-room.jpg) center/cover;opacity:.55;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.water:before{content:"";position:absolute;right:0;top:0;bottom:0;width:48%;background:url(images/living-room.jpg) center/cover;opacity:.55;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
 .water:after{content:"";position:absolute;right:0;top:0;bottom:0;width:48%;background:linear-gradient(90deg,var(--ink),rgba(19,48,46,.2));clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
 .water .wrap{position:relative;z-index:2}
 .water .eyebrow{color:var(--sun)}
@@ -134,6 +133,8 @@ h2{font-family:var(--serif);font-weight:900;font-size:clamp(34px,4.6vw,58px);lin
 .vows li{list-style:none;display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);font-weight:600;font-family:var(--serif);font-size:20px}
 .vows li:before{content:"";flex:none;width:22px;height:22px;margin-top:4px;border-radius:50%;background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/70% no-repeat}
 
+.band{margin:0;height:clamp(240px,36vw,470px);overflow:hidden;border-top:2px solid var(--ink)}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
 /* contact */
 .contact{background:var(--paper);padding:100px 0;border-top:2px solid var(--ink)}
 .ct-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}
@@ -156,6 +157,7 @@ input[type=file]{font:inherit;font-size:15px}
 /* footer */
 footer{background:#0d2220;color:rgba(244,236,220,.82);padding:60px 0 28px;font-size:15px}
 .ft{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(244,236,220,.15)}
+footer .flogo{height:64px;width:auto;margin-bottom:16px}
 footer h4{font-family:var(--serif);color:var(--cream);font-size:20px;margin-bottom:14px}
 footer ul{list-style:none;display:grid;gap:7px}
 footer a{text-decoration:none}
@@ -191,6 +193,8 @@ footer a:hover{color:var(--sun)}
   .ledger div,.ledger div+div{padding:20px 0;border-right:0;border-bottom:1px solid rgba(244,236,220,.22)}
   form{grid-template-columns:1fr}
   .badge{width:118px;height:118px}
+  .brand img{height:44px}
+  .flogo{height:54px}
   .badge .core{font-size:22px}
   .card{padding:28px}
   .strip .wrap{justify-content:center;text-align:center}
@@ -209,11 +213,7 @@ footer a:hover{color:var(--sun)}
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Dynamic Carpet &amp; Upholstery Care home">
-      <!-- Temporary mark. Replace with the final logo file when ready: <img src="images/logo.png" alt="Dynamic Carpet &amp; Upholstery Care"> -->
-      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#13302e"/><path d="M16 12h8c8 0 12 5 12 12s-4 12-12 12h-8z" fill="none" stroke="#f4ecdc" stroke-width="3.2" stroke-linejoin="round"/><path d="M9 31c4-4 7 4 11 0s7 4 11 0 6 3 8 1" fill="none" stroke="#efb53f" stroke-width="2.6" stroke-linecap="round"/></svg>
-      <span><b>Dynamic Carpet<br>&amp; Upholstery Care</b><small>Medicine Hat</small></span>
-    </a>
+    <a class="brand" href="#top" aria-label="Dynamic Carpet &amp; Upholstery Care home"><img src="images/logo.png" alt="Dynamic Carpet &amp; Upholstery Care" width="1402" height="318"></a>
     <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
     <nav>
       <ul id="menu">
@@ -272,7 +272,7 @@ footer a:hover{color:var(--sun)}
         <div class="txt"><h3>Carpet Cleaning</h3><p>Our carpet cleaning process uses 80% less water than typical steam cleaning, so carpets dry within hours, not days. This means you and your family can get back to enjoying your home sooner.</p></div>
       </div>
       <div class="panel" tabindex="0" role="button" aria-expanded="false">
-        <img src="images/upholstery-wand.jpg" alt="Upholstery cleaning wand on a sofa" loading="lazy">
+        <img src="images/upholstery-sofa.jpg" alt="Technician cleaning a fabric sofa with an extraction wand" style="object-position:50% 45%" loading="lazy">
         <span class="num">02</span>
         <div class="txt"><h3>Upholstery Cleaning</h3><p>Our upholstery cleaning service is strong enough to clean the deepest stains, gentle enough not to damage furniture and safe for your entire family.</p></div>
       </div>
@@ -325,6 +325,8 @@ footer a:hover{color:var(--sun)}
   </div>
 </section>
 
+<figure class="band rv"><img src="images/service-van.jpg" alt="Carpet cleaning van parked outside a prairie home" width="1376" height="768" loading="lazy"></figure>
+
 <section class="contact" id="contact">
   <div class="wrap ct-grid">
     <div class="rv">
@@ -359,7 +361,7 @@ footer a:hover{color:var(--sun)}
   <div class="wrap">
     <div class="ft">
       <div>
-        <h4>Dynamic Carpet &amp; Upholstery Care</h4>
+        <img class="flogo" src="images/logo-white.png" alt="Dynamic Carpet &amp; Upholstery Care" width="1402" height="318">
         <p>20 Rossland Avenue Southeast,<br>Medicine Hat, Alberta T1B 2E9</p>
         <p style="margin-top:10px"><a href="tel:4035291550">403-529-1550</a><br><a href="mailto:dynamic.eirich@gmail.com">dynamic.eirich@gmail.com</a></p>
       </div>
