@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Carpet &amp; Upholstery Care | Medicine Hat</title>
+<meta name="description" content="Serving Medicine Hat for over 45 years. Dynamic Carpet &amp; Upholstery Care is your #1 choice for all your carpet &amp; upholstery cleaning needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#13302e;
+  --ink2:#1d4541;
+  --cream:#f4ecdc;
+  --paper:#fffaf0;
+  --clay:#c24e2a;
+  --sun:#efb53f;
+  --line:rgba(19,48,46,.18);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+/* top strip */
+.strip{background:var(--ink);color:var(--cream);font-size:13.5px}
+.strip .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+.strip a{text-decoration:none;opacity:.9}
+.strip a:hover{opacity:1;text-decoration:underline}
+.strip span b{color:var(--sun);font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:46px;height:46px;flex:none}
+.brand b{font-family:var(--serif);font-weight:900;font-size:20px;line-height:1.05;display:block;letter-spacing:-.01em}
+.brand small{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--clay)}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:15px;position:relative}
+nav ul a:not(.btn):after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--clay);transition:width .25s}
+nav ul a:not(.btn):hover:after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--clay);color:#fff;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--clay);transition:.2s;font-size:15px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+.burger{display:none;background:none;border:2px solid var(--ink);border-radius:10px;width:44px;height:44px;cursor:pointer}
+.burger i{display:block;width:20px;height:2px;background:var(--ink);margin:4px auto}
+
+/* hero */
+.hero{position:relative;padding:70px 0 0;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,transparent 0 38px,rgba(19,48,46,.04) 38px 40px),
+  repeating-linear-gradient(0deg,transparent 0 38px,rgba(19,48,46,.04) 38px 40px);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(42px,6vw,82px);line-height:.98;letter-spacing:-.025em}
+h1 em{font-style:normal;color:var(--clay);position:relative;white-space:nowrap}
+h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:var(--sun);z-index:-1;transform:skewX(-14deg)}
+.hero p.lead{font-size:20px;max-width:30em;margin:26px 0 34px;color:var(--ink2)}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap}
+.photo{position:relative;padding:0 0 34px 34px}
+.photo .frame{position:relative;transform:rotate(1.6deg);box-shadow:0 30px 60px -25px rgba(19,48,46,.55);background:var(--paper);padding:12px 12px 12px}
+.photo img{width:100%;height:auto;aspect-ratio:4/3.3;object-fit:cover}
+.tape{position:absolute;top:-16px;left:50%;width:110px;height:32px;background:rgba(239,181,63,.8);transform:translateX(-50%) rotate(-3deg)}
+.badge{position:absolute;left:-6px;bottom:-4px;width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);animation:spin 28s linear infinite}
+.badge svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
+.badge text{font-size:12.5px;letter-spacing:.17em;fill:var(--cream);font-weight:600;text-transform:uppercase}
+.badge .core{position:relative;font-family:var(--serif);font-weight:900;font-size:30px;color:var(--sun);animation:spin 28s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ledger */
+.ledger{position:relative;margin-top:64px;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(3,1fr)}
+.ledger div{padding:26px 24px 30px 0;border-right:1px solid var(--line)}
+.ledger div+div{padding-left:28px}
+.ledger div:last-child{border-right:0}
+.ledger b{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(38px,5vw,64px);line-height:1;color:var(--clay)}
+.ledger span{font-size:15px;font-weight:500}
+
+/* services accordion */
+.services{padding:110px 0 100px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
+h2{font-family:var(--serif);font-weight:900;font-size:clamp(34px,4.6vw,58px);line-height:1.02;letter-spacing:-.02em}
+.head p{max-width:24em;color:var(--ink2)}
+.acc{display:flex;height:520px;gap:12px}
+.panel{position:relative;flex:1;min-width:0;overflow:hidden;cursor:pointer;color:#fff;transition:flex .6s cubic-bezier(.2,.8,.2,1);border-radius:4px;isolation:isolate;outline-offset:3px}
+.panel:focus-visible{outline:3px solid var(--clay)}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s}
+.panel:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(19,48,46,.15) 20%,rgba(19,48,46,.9));transition:.4s}
+.panel:not(.on):after{background:linear-gradient(180deg,rgba(19,48,46,.55),rgba(19,48,46,.85))}
+.panel.on{flex:3.4}
+.panel.on img{transform:scale(1.05)}
+.panel .num{position:absolute;top:20px;left:22px;font-family:var(--serif);font-weight:900;font-size:22px;color:var(--sun)}
+.panel .txt{position:absolute;left:0;right:0;bottom:0;padding:26px}
+.panel:not(.on) .txt{position:static;padding:0}
+.panel h3{font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.1}
+.panel:not(.on) h3{writing-mode:vertical-rl;font-size:19px;white-space:nowrap;position:absolute;top:80px;left:22px;padding:0}
+.panel p{max-height:0;opacity:0;overflow:hidden;transition:.5s;font-size:16px;margin-top:0;max-width:30em}
+.panel.on p{max-height:240px;opacity:1;margin-top:12px}
+
+/* water */
+.water{position:relative;background:var(--ink);color:var(--cream);overflow:hidden;padding:100px 0}
+.water:before{content:"";position:absolute;right:0;top:0;bottom:0;width:48%;background:url(images/empty-room.jpg) center/cover;opacity:.55;clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.water:after{content:"";position:absolute;right:0;top:0;bottom:0;width:48%;background:linear-gradient(90deg,var(--ink),rgba(19,48,46,.2));clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.water .wrap{position:relative;z-index:2}
+.water .eyebrow{color:var(--sun)}
+.water h2{max-width:11em}
+.water h2 span{color:var(--sun)}
+.water p{max-width:30em;margin:22px 0 40px;font-size:19px;opacity:.92}
+.bars{max-width:520px;display:grid;gap:18px;margin-bottom:38px}
+.bar small{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px;font-weight:600;letter-spacing:.04em}
+.bar i{display:block;height:16px;border-radius:99px;background:rgba(244,236,220,.12);overflow:hidden}
+.bar i u{display:block;height:100%;border-radius:99px;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1);background:rgba(244,236,220,.55)}
+.bar.us i u{background:var(--sun)}
+.in .bar.them i u{width:100%}
+.in .bar.us i u{width:20%}
+.water .btn{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.water .btn:hover{background:var(--cream);border-color:var(--cream)}
+
+/* pricing */
+.pricing{padding:110px 0}
+.pr-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.sign{position:relative}
+.sign img{width:100%;height:auto;transform:rotate(-1.8deg);box-shadow:0 26px 50px -24px rgba(19,48,46,.6)}
+.sign:before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:2px solid var(--clay);z-index:-1;transform:rotate(1.4deg)}
+.pricing h2{margin-bottom:22px}
+.pricing p{margin-bottom:16px;color:var(--ink2)}
+.vows{margin-top:26px;border-top:2px solid var(--ink)}
+.vows li{list-style:none;display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);font-weight:600;font-family:var(--serif);font-size:20px}
+.vows li:before{content:"";flex:none;width:22px;height:22px;margin-top:4px;border-radius:50%;background:var(--clay) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/70% no-repeat}
+
+/* contact */
+.contact{background:var(--paper);padding:100px 0;border-top:2px solid var(--ink)}
+.ct-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+input[type=text],input[type=email],input[type=tel]{width:100%;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:10px 2px;font:inherit;color:inherit;border-radius:0}
+input:focus{outline:none;border-color:var(--clay)}
+input[type=file]{font:inherit;font-size:15px}
+.fine{font-size:12.5px;opacity:.7;grid-column:1/-1}
+.card{background:var(--ink);color:var(--cream);padding:40px;align-self:start}
+.card h3{font-family:var(--serif);font-size:26px;margin-bottom:22px;font-weight:700}
+.card dl{display:grid;gap:18px}
+.card dt{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sun);font-weight:700}
+.card dd{font-size:18px}
+.card a{text-decoration:none;border-bottom:1px solid rgba(244,236,220,.35)}
+.card a:hover{border-color:var(--sun)}
+.card .tel{font-family:var(--serif);font-weight:900;font-size:34px;border:0}
+
+/* footer */
+footer{background:#0d2220;color:rgba(244,236,220,.82);padding:60px 0 28px;font-size:15px}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(244,236,220,.15)}
+footer h4{font-family:var(--serif);color:var(--cream);font-size:20px;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:7px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--sun)}
+.bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:24px;font-size:14px}
+.bottom a{color:var(--sun);font-weight:600}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:.8s}
+.in.rv,.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:980px){
+  .burger{display:block}
+  nav ul{position:absolute;left:0;right:0;top:100%;background:var(--cream);flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:1px solid var(--line);display:none}
+  nav ul.open{display:flex}
+  .hero-grid,.pr-grid,.ct-grid{grid-template-columns:1fr;gap:44px}
+  .photo{padding-left:18px}
+  .acc{flex-direction:column;height:auto}
+  .panel,.panel.on{flex:none;height:96px;transition:height .5s}
+  .panel.on{height:380px}
+  .panel:not(.on) h3{writing-mode:horizontal-tb;left:22px;top:50%;translate:0 -50%}
+  .panel .num{top:auto;bottom:auto;right:22px;left:auto;top:50%;translate:0 -50%}
+  .water:before,.water:after{width:100%;clip-path:none;opacity:.25}
+  .water:after{background:none}
+  .ft{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .ledger{grid-template-columns:1fr}
+  .ledger div,.ledger div+div{padding:20px 0;border-right:0;border-bottom:1px solid var(--line)}
+  form{grid-template-columns:1fr}
+  .badge{width:118px;height:118px}
+  .badge .core{font-size:22px}
+  .card{padding:28px}
+  .strip .wrap{justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <div class="wrap">
+    <span>20 Rossland Avenue Southeast, Medicine Hat, Alberta <b>T1B 2E9</b></span>
+    <span><a href="tel:4035291550">403-529-1550</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/DynamicCarpetUpholsteryCare" target="_blank" rel="noopener">Facebook</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Dynamic Carpet &amp; Upholstery Care home">
+      <!-- Temporary mark. Replace with the final logo file when ready: <img src="images/logo.png" alt="Dynamic Carpet &amp; Upholstery Care"> -->
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#13302e"/><path d="M16 12h8c8 0 12 5 12 12s-4 12-12 12h-8z" fill="none" stroke="#f4ecdc" stroke-width="3.2" stroke-linejoin="round"/><path d="M9 31c4-4 7 4 11 0s7 4 11 0 6 3 8 1" fill="none" stroke="#efb53f" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span><b>Dynamic Carpet<br>&amp; Upholstery Care</b><small>Medicine Hat</small></span>
+    </a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav>
+      <ul id="menu">
+        <li><a href="https://dynamic27.godaddysites.com/what-is-vlm-cleaning%3F">What is VLM cleaning?</a></li>
+        <li><a href="https://dynamic27.godaddysites.com/about-us">About Us</a></li>
+        <li><a href="https://dynamic27.godaddysites.com/faq">FAQ</a></li>
+        <li><a href="https://dynamic27.godaddysites.com/photos">Photos</a></li>
+        <li><a href="https://dynamic27.godaddysites.com/videos">Videos</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a class="btn" href="tel:4035291550">Call Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="rv">
+        <span class="eyebrow">Carpet &amp; Upholstery Care</span>
+        <h1>Serving Medicine Hat for over <em>45 years</em></h1>
+        <p class="lead">Our carpet cleaning process uses 80% less water than typical steam cleaning, so carpets dry within hours, not days.</p>
+        <div class="acts">
+          <a class="btn" href="tel:4035291550">Call Now &nbsp;403-529-1550</a>
+          <a class="btn ghost" href="#contact">Get an Estimate</a>
+        </div>
+      </div>
+      <div class="photo rv">
+        <div class="frame">
+          <span class="tape"></span>
+          <img src="images/hero-family-rug.jpg" alt="Girl and her dog relaxing on a freshly cleaned white rug" width="2160" height="1440">
+        </div>
+        <div class="badge" aria-label="Over 15,000 homes and businesses cleaned">
+          <svg viewBox="0 0 150 150" aria-hidden="true"><defs><path id="c" d="M75 75m-62 0a62 62 0 1 1 124 0a62 62 0 1 1-124 0"/></defs><text><textPath href="#c">Over 15,000 Homes &amp; Businesses Cleaned · </textPath></text></svg>
+          <span class="core">15K</span>
+        </div>
+      </div>
+    </div>
+    <div class="ledger rv">
+      <div><b>45+</b><span>years serving Medicine Hat</span></div>
+      <div><b>15,000</b><span>homes &amp; businesses cleaned</span></div>
+      <div><b>80%</b><span>less water than typical steam cleaning</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>What we do</h2>
+      <p>Five ways we take care of your carpets, furniture and move days.</p>
+    </div>
+    <div class="acc" id="acc">
+      <div class="panel on" tabindex="0" role="button" aria-expanded="true">
+        <img src="images/carpet-dark-rug.jpg" alt="Woman relaxing on a clean dark shag carpet" loading="lazy">
+        <span class="num">01</span>
+        <div class="txt"><h3>Carpet Cleaning</h3><p>Our carpet cleaning process uses 80% less water than typical steam cleaning, so carpets dry within hours, not days. This means you and your family can get back to enjoying your home sooner.</p></div>
+      </div>
+      <div class="panel" tabindex="0" role="button" aria-expanded="false">
+        <img src="images/upholstery-wand.jpg" alt="Upholstery cleaning wand on a sofa" loading="lazy">
+        <span class="num">02</span>
+        <div class="txt"><h3>Upholstery Cleaning</h3><p>Our upholstery cleaning service is strong enough to clean the deepest stains, gentle enough not to damage furniture and safe for your entire family.</p></div>
+      </div>
+      <div class="panel" tabindex="0" role="button" aria-expanded="false">
+        <img src="images/area-rug-machine.jpg" alt="Machine cleaning a rug with foam detergent" loading="lazy">
+        <span class="num">03</span>
+        <div class="txt"><h3>Area Rug Cleaning</h3><p>Our gentle yet deep rug cleaning process removes dirt and non-living allergens from your rugs while preserving the colors within the fibers, leaving your rugs vibrant and fresh.</p></div>
+      </div>
+      <div class="panel" tabindex="0" role="button" aria-expanded="false">
+        <img src="images/stain-coffee.jpg" alt="Spilled coffee cup leaving a stain on beige carpet" loading="lazy">
+        <span class="num">04</span>
+        <div class="txt"><h3>Stain Removal</h3><p>Spot and stain removal is a very complex process. It requires understanding the right solvents and chemicals to remove the substance causing the stain.</p></div>
+      </div>
+      <div class="panel" tabindex="0" role="button" aria-expanded="false">
+        <img src="images/move-day.jpg" alt="Cardboard box labeled moving day" loading="lazy">
+        <span class="num">05</span>
+        <div class="txt"><h3>Move in / Move out</h3><p>Generally when people are moving, they need their carpet cleaning on a specific day, and are in need of a hassle free experience. Let us help take away some of the stress.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="water rv" id="water">
+  <div class="wrap">
+    <span class="eyebrow">Less water, faster dry</span>
+    <h2>Dry within hours, <span>not days.</span></h2>
+    <p>Our cleaning process uses 80% less water than typical steam cleaning, so you and your family can get back to enjoying your home sooner.</p>
+    <div class="bars" aria-label="Water use compared with typical steam cleaning">
+      <div class="bar them"><small><span>Typical steam cleaning</span><span>Days to dry</span></small><i><u></u></i></div>
+      <div class="bar us"><small><span>Dynamic</span><span>Hours to dry</span></small><i><u></u></i></div>
+    </div>
+    <a class="btn" href="https://dynamic27.godaddysites.com/what-is-vlm-cleaning%3F">What is VLM cleaning?</a>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap pr-grid">
+    <div class="sign rv"><img src="images/no-hidden-fees.jpg" alt="Man holding a sign that reads No Hidden Fees" width="540" height="315" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow">Straight talk</span>
+      <h2>All-inclusive pricing, no hidden fees</h2>
+      <p>When hiring Dynamic, you are not going to get the bait and switch tactics or a splash and dash service because you didn't get the extras. We want our customers to feel at ease when they hire us.</p>
+      <p>Don't let others fool you with low prices. It takes time, quality chemistry, powerful equipment and industry knowledge to get the best results.</p>
+      <ul class="vows">
+        <li>No Hidden Fees or Fine Print</li>
+        <li>We don't make promises we can't keep</li>
+        <li>Quality chemistry, powerful equipment, industry knowledge</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap ct-grid">
+    <div class="rv">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Get an estimate</h2>
+      <form id="est">
+        <div><label for="n">Name*</label><input id="n" name="name" type="text" required></div>
+        <div><label for="e">Email*</label><input id="e" name="email" type="email" required></div>
+        <div><label for="p">Phone*</label><input id="p" name="phone" type="tel" required></div>
+        <div><label for="a">Address*</label><input id="a" name="address" type="text" required></div>
+        <div class="full"><label for="f">Attach Files</label><input id="f" type="file" multiple></div>
+        <div class="full"><button class="btn" type="submit">Send</button></div>
+        <p class="fine">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+      </form>
+    </div>
+    <aside class="card rv">
+      <h3>Dynamic Carpet &amp; Upholstery Care</h3>
+      <dl>
+        <div><dt>Phone</dt><dd><a class="tel" href="tel:4035291550">403-529-1550</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:dynamic.eirich@gmail.com">dynamic.eirich@gmail.com</a></dd></div>
+        <div><dt>Address</dt><dd>20 Rossland Avenue Southeast,<br>Medicine Hat, Alberta T1B 2E9</dd></div>
+        <div><dt>Hours</dt><dd>Closed most major holidays</dd></div>
+        <div><dt>Social</dt><dd><a href="https://www.facebook.com/DynamicCarpetUpholsteryCare" target="_blank" rel="noopener">Facebook</a></dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <h4>Dynamic Carpet &amp; Upholstery Care</h4>
+        <p>20 Rossland Avenue Southeast,<br>Medicine Hat, Alberta T1B 2E9</p>
+        <p style="margin-top:10px"><a href="tel:4035291550">403-529-1550</a><br><a href="mailto:dynamic.eirich@gmail.com">dynamic.eirich@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">What we do</a></li>
+          <li><a href="https://dynamic27.godaddysites.com/what-is-vlm-cleaning%3F">What is VLM cleaning?</a></li>
+          <li><a href="#contact">Get an Estimate</a></li>
+          <li><a href="https://dynamic27.godaddysites.com/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="https://dynamic27.godaddysites.com/about-us">About Us</a></li>
+          <li><a href="https://dynamic27.godaddysites.com/videos">Videos</a></li>
+          <li><a href="https://dynamic27.godaddysites.com/photos">Photos</a></li>
+          <li><a href="https://www.facebook.com/DynamicCarpetUpholsteryCare" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+        <p style="margin-top:12px;font-size:14px">Closed most major holidays</p>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>Copyright © 2026 Dynamic Carpet &amp; Upholstery Care - All Rights Reserved.</span>
+      <span><a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Design by Cleaning Digital.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var panels=document.querySelectorAll('#acc .panel');
+  function open(p){panels.forEach(function(x){var on=x===p;x.classList.toggle('on',on);x.setAttribute('aria-expanded',on)})}
+  panels.forEach(function(p){
+    p.addEventListener('click',function(){open(p)});
+    p.addEventListener('mouseenter',function(){if(window.matchMedia('(min-width:981px)').matches)open(p)});
+    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(p)}});
+  });
+  var b=document.querySelector('.burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')m.classList.remove('open')});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  document.getElementById('est').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nPhone: '+f.phone.value+'\nAddress: '+f.address.value;
+    location.href='mailto:dynamic.eirich@gmail.com?subject='+encodeURIComponent('Estimate request')+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
