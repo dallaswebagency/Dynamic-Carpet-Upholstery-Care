@@ -53,33 +53,33 @@ nav ul a:not(.btn):hover:after{width:100%}
 .burger i{display:block;width:20px;height:2px;background:var(--ink);margin:4px auto}
 
 /* hero */
-.hero{position:relative;padding:70px 0 0;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:
-  repeating-linear-gradient(90deg,transparent 0 38px,rgba(19,48,46,.04) 38px 40px),
-  repeating-linear-gradient(0deg,transparent 0 38px,rgba(19,48,46,.04) 38px 40px);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero{position:relative;padding:96px 0 0;overflow:hidden;color:var(--cream);background:var(--ink) url(images/hero-family-rug.jpg) 72% 40%/cover no-repeat;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(98deg,rgba(19,48,46,.97) 0,rgba(19,48,46,.93) 38%,rgba(19,48,46,.55) 62%,rgba(19,48,46,.08) 100%)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(112deg,transparent 0 46px,rgba(244,236,220,.05) 46px 48px);-webkit-mask:linear-gradient(90deg,#000 30%,transparent 75%);mask:linear-gradient(90deg,#000 30%,transparent 75%)}
+.sweep{position:absolute;top:0;bottom:0;left:-30%;width:26%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(239,181,63,.22),transparent);transform:skewX(-14deg);animation:sweep 7s ease-in-out infinite}
+@keyframes sweep{0%{left:-30%}55%,100%{left:120%}}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;min-height:480px}
 .eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+.hero .eyebrow{color:var(--sun)}
 h1{font-family:var(--serif);font-weight:900;font-size:clamp(42px,6vw,82px);line-height:.98;letter-spacing:-.025em}
-h1 em{font-style:normal;color:var(--clay);position:relative;white-space:nowrap}
-h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:var(--sun);z-index:-1;transform:skewX(-14deg)}
-.hero p.lead{font-size:20px;max-width:30em;margin:26px 0 34px;color:var(--ink2)}
+h1 em{font-style:normal;color:var(--sun);position:relative;white-space:nowrap}
+h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:var(--clay);z-index:-1;transform:skewX(-14deg)}
+.hero p.lead{font-size:20px;max-width:30em;margin:26px 0 34px;color:rgba(244,236,220,.9)}
+.hero .btn.ghost{color:var(--cream);border-color:var(--cream)}
+.hero .btn.ghost:hover{background:var(--cream);color:var(--ink)}
 .hero .acts{display:flex;gap:14px;flex-wrap:wrap}
-.photo{position:relative;padding:0 0 34px 34px}
-.photo .frame{position:relative;transform:rotate(1.6deg);box-shadow:0 30px 60px -25px rgba(19,48,46,.55);background:var(--paper);padding:12px 12px 12px}
-.photo img{width:100%;height:auto;aspect-ratio:4/3.3;object-fit:cover}
-.tape{position:absolute;top:-16px;left:50%;width:110px;height:32px;background:rgba(239,181,63,.8);transform:translateX(-50%) rotate(-3deg)}
-.badge{position:absolute;left:-6px;bottom:-4px;width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);animation:spin 28s linear infinite}
+.badge{position:relative;justify-self:end;align-self:center;width:170px;height:170px;border-radius:50%;background:rgba(19,48,46,.88);border:1px solid rgba(244,236,220,.25);backdrop-filter:blur(6px);color:var(--cream);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);animation:spin 28s linear infinite}
 .badge svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
 .badge text{font-size:12.5px;letter-spacing:.17em;fill:var(--cream);font-weight:600;text-transform:uppercase}
 .badge .core{position:relative;font-family:var(--serif);font-weight:900;font-size:30px;color:var(--sun);animation:spin 28s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* ledger */
-.ledger{position:relative;margin-top:64px;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(3,1fr)}
-.ledger div{padding:26px 24px 30px 0;border-right:1px solid var(--line)}
+.ledger{position:relative;margin-top:64px;border-top:2px solid var(--cream);display:grid;grid-template-columns:repeat(3,1fr)}
+.ledger div{padding:26px 24px 30px 0;border-right:1px solid rgba(244,236,220,.22)}
 .ledger div+div{padding-left:28px}
 .ledger div:last-child{border-right:0}
-.ledger b{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(38px,5vw,64px);line-height:1;color:var(--clay)}
+.ledger b{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(38px,5vw,64px);line-height:1;color:var(--sun)}
 .ledger span{font-size:15px;font-weight:500}
 
 /* services accordion */
@@ -173,7 +173,9 @@ footer a:hover{color:var(--sun)}
   nav ul{position:absolute;left:0;right:0;top:100%;background:var(--cream);flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:1px solid var(--line);display:none}
   nav ul.open{display:flex}
   .hero-grid,.pr-grid,.ct-grid{grid-template-columns:1fr;gap:44px}
-  .photo{padding-left:18px}
+  .hero{background-position:70% 30%}
+  .hero:before{background:linear-gradient(180deg,rgba(19,48,46,.9),rgba(19,48,46,.8))}
+  .badge{justify-self:start}
   .acc{flex-direction:column;height:auto}
   .panel,.panel.on{flex:none;height:96px;transition:height .5s}
   .panel.on{height:380px}
@@ -186,7 +188,7 @@ footer a:hover{color:var(--sun)}
 @media(max-width:560px){
   body{font-size:16px}
   .ledger{grid-template-columns:1fr}
-  .ledger div,.ledger div+div{padding:20px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .ledger div,.ledger div+div{padding:20px 0;border-right:0;border-bottom:1px solid rgba(244,236,220,.22)}
   form{grid-template-columns:1fr}
   .badge{width:118px;height:118px}
   .badge .core{font-size:22px}
@@ -230,6 +232,7 @@ footer a:hover{color:var(--sun)}
 <main id="top">
 
 <section class="hero">
+  <span class="sweep" aria-hidden="true"></span>
   <div class="wrap">
     <div class="hero-grid">
       <div class="rv">
@@ -241,11 +244,7 @@ footer a:hover{color:var(--sun)}
           <a class="btn ghost" href="#contact">Get an Estimate</a>
         </div>
       </div>
-      <div class="photo rv">
-        <div class="frame">
-          <span class="tape"></span>
-          <img src="images/hero-family-rug.jpg" alt="Girl and her dog relaxing on a freshly cleaned white rug" width="2160" height="1440">
-        </div>
+      <div class="rv">
         <div class="badge" aria-label="Over 15,000 homes and businesses cleaned">
           <svg viewBox="0 0 150 150" aria-hidden="true"><defs><path id="c" d="M75 75m-62 0a62 62 0 1 1 124 0a62 62 0 1 1-124 0"/></defs><text><textPath href="#c">Over 15,000 Homes &amp; Businesses Cleaned · </textPath></text></svg>
           <span class="core">15K</span>
